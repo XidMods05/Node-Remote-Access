@@ -15,7 +15,6 @@ Comprehensive Documentation: Includes clear and detailed documentation with exam
 Example Usage:
 
 ```C#
-// Example client code
 class Program
 {
     private static void Main(string[] args)
