@@ -1,0 +1,15 @@
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\bin\Debug\net8.0\NRA.Utilities.deps.json
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\bin\Debug\net8.0\NRA.Utilities.dll
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\bin\Debug\net8.0\NRA.Utilities.pdb
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\NRA.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\NRA.Utilities.AssemblyInfoInputs.cache
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\NRA.Utilities.AssemblyInfo.cs
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\NRA.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\NRA.Utilities.dll
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\refint\NRA.Utilities.dll
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\NRA.Utilities.pdb
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\ref\NRA.Utilities.dll
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\bin\Debug\net8.0\NRA.Project.Security.dll
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\bin\Debug\net8.0\NRA.Project.Security.pdb
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\NRA.Utilities.csproj.AssemblyReference.cache
+C:\Users\Назар Батчаев\RiderProjects\NRA\NRA.Utilities\obj\Debug\net8.0\NRA.Util.B78D1CC3.Up2Date

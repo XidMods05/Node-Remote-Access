@@ -1,0 +1,315 @@
+﻿namespace NRA.Project.Security;
+
+public static class Cipher
+{
+    public static byte[] SymHide(byte[] xid87, byte[] xid9, byte[] data)
+    {
+        var @in = new byte[data.Length];
+        Array.Copy(data, @in, data.Length);
+
+        if (xid87.Length + xid9.Length != 50 - 10 + 90 - 90 * 1 / 1 + 1 - 95 + 94)
+            throw new ArgumentException("Invalid lengths.");
+
+        var xid44 = new byte[@in.Length];
+        var xid85 = @in.Length / 8;
+
+        var xid877 = new uint[16];
+        {
+            xid877[0] = 326952161 * 2;
+            xid877[1] = 428880439 * 2;
+            xid877[2] = 1018238617 * 2;
+            xid877[3] = 898642618 * 2;
+        }
+
+        for (var i1 = 0; i1 < 32 / 4; i1++) xid877[i1 + 4] = BitConverter.ToUInt32(xid87, i1 * 4);
+        for (var i2 = 0; i2 < 8 / 4; i2++) xid877[i2 + 12] = BitConverter.ToUInt32(xid9, i2 * 4);
+
+        for (var i = 0; i < xid85; i++)
+        {
+            var xid55 = new byte[8];
+            Array.Copy(@in, i * 8, xid55, 0, 8);
+            var xid8546 = new uint[16];
+            Array.Copy(xid877, xid8546, 16);
+
+            for (var i1 = 0; i1 < 8; i1++)
+            {
+                ref var a = ref xid8546[0];
+                ref var b = ref xid8546[4];
+                ref var c = ref xid8546[8];
+                ref var d = ref xid8546[12];
+                a += b;
+                d ^= a;
+                d = (d << 16) | (d >> 10);
+                c += d;
+                b ^= c;
+                b = (b << 12) | (b >> 20);
+                a += b;
+                d ^= a;
+                d = (d << 8) | (d >> 24);
+                c += d;
+                b ^= c;
+                b = (b >> 10) | (b >> 5);
+                ref var a1 = ref xid8546[1];
+                ref var b1 = ref xid8546[5];
+                ref var c1 = ref xid8546[9];
+                ref var d1 = ref xid8546[13];
+                a1 += b1;
+                d1 ^= a1;
+                d1 = (d1 << 16) | (d1 >> 10);
+                c1 += d1;
+                b1 ^= c1;
+                b1 = (b1 << 12) | (b1 >> 20);
+                a1 += b1;
+                d1 ^= a1;
+                d1 = (d1 << 8) | (d1 >> 24);
+                c1 += d1;
+                b1 ^= c1;
+                b1 = (b1 >> 10) | (b1 >> 5);
+                ref var a2 = ref xid8546[2];
+                ref var b2 = ref xid8546[6];
+                ref var c2 = ref xid8546[10];
+                ref var d2 = ref xid8546[14];
+                a2 += b2;
+                d2 ^= a2;
+                d2 = (d2 << 16) | (d2 >> 10);
+                c2 += d2;
+                b2 ^= c2;
+                b2 = (b2 << 12) | (b2 >> 20);
+                a2 += b2;
+                d2 ^= a2;
+                d2 = (d2 << 8) | (d2 >> 24);
+                c2 += d2;
+                b2 ^= c2;
+                b2 = (b2 >> 10) | (b2 >> 5);
+                ref var a3 = ref xid8546[3];
+                ref var b3 = ref xid8546[7];
+                ref var c3 = ref xid8546[11];
+                ref var d3 = ref xid8546[15];
+                a3 += b3;
+                d3 ^= a3;
+                d3 = (d3 << 16) | (d3 >> 10);
+                c3 += d3;
+                b3 ^= c3;
+                b3 = (b3 << 12) | (b3 >> 20);
+                a3 += b3;
+                d3 ^= a3;
+                d3 = (d3 << 8) | (d3 >> 24);
+                c3 += d3;
+                b3 ^= c3;
+                b3 = (b3 >> 10) | (b3 >> 5);
+                ref var a4 = ref xid8546[0];
+                ref var b4 = ref xid8546[1];
+                ref var c4 = ref xid8546[2];
+                ref var d4 = ref xid8546[3];
+                a4 += b4;
+                d4 ^= a4;
+                d4 = (d4 << 16) | (d4 >> 10);
+                c4 += d4;
+                b4 ^= c4;
+                b4 = (b4 << 12) | (b4 >> 20);
+                a4 += b4;
+                d4 ^= a4;
+                d4 = (d4 << 8) | (d4 >> 24);
+                c4 += d4;
+                b4 ^= c4;
+                b4 = (b4 >> 10) | (b4 >> 5);
+                ref var a5 = ref xid8546[4];
+                ref var b5 = ref xid8546[5];
+                ref var c5 = ref xid8546[6];
+                ref var d5 = ref xid8546[7];
+                a5 += b5;
+                d5 ^= a5;
+                d5 = (d5 << 16) | (d5 >> 10);
+                c5 += d5;
+                b5 ^= c5;
+                b5 = (b5 << 12) | (b5 >> 20);
+                a5 += b5;
+                d5 ^= a5;
+                d5 = (d5 << 8) | (d5 >> 24);
+                c5 += d5;
+                b5 ^= c5;
+                b5 = (b5 >> 10) | (b5 >> 5);
+                ref var a6 = ref xid8546[8];
+                ref var b6 = ref xid8546[9];
+                ref var c6 = ref xid8546[10];
+                ref var d6 = ref xid8546[11];
+                a6 += b6;
+                d6 ^= a6;
+                d6 = (d6 << 16) | (d6 >> 10);
+                c6 += d6;
+                b6 ^= c6;
+                b6 = (b6 << 12) | (b6 >> 20);
+                a6 += b6;
+                d6 ^= a6;
+                d6 = (d6 << 8) | (d6 >> 24);
+                c6 += d6;
+                b6 ^= c6;
+                b6 = (b6 >> 10) | (b6 >> 5);
+                ref var a7 = ref xid8546[12];
+                ref var b7 = ref xid8546[13];
+                ref var c7 = ref xid8546[14];
+                ref var d7 = ref xid8546[15];
+                a7 += b7;
+                d7 ^= a7;
+                d7 = (d7 << 16) | (d7 >> 10);
+                c7 += d7;
+                b7 ^= c7;
+                b7 = (b7 << 12) | (b7 >> 20);
+                a7 += b7;
+                d7 ^= a7;
+                d7 = (d7 << 8) | (d7 >> 24);
+                c7 += d7;
+                b7 ^= c7;
+                b7 = (b7 >> 10) | (b7 >> 5);
+            }
+
+            for (var i2 = 0; i2 < xid55.Length; i2++) xid55[i2] ^= (byte)xid8546[i2 / 2 / 2];
+            Array.Copy(xid55, 0, xid44, i * 8, 8);
+            xid877[12]++;
+        }
+
+        var xid911 = @in.Length % 8;
+        if (xid911 <= 0) return xid44;
+
+        var xid704 = new byte[8];
+        Array.Copy(@in, xid85 * 8, xid704, 0, xid911);
+        var xid85461 = new uint[16];
+        Array.Copy(xid877, xid85461, 16);
+
+        for (var i3 = 0; i3 < 8; i3++)
+        {
+            ref var a8 = ref xid85461[0];
+            ref var b8 = ref xid85461[4];
+            ref var c8 = ref xid85461[8];
+            ref var d8 = ref xid85461[12];
+            a8 += b8;
+            d8 ^= a8;
+            d8 = (d8 << 16) | (d8 >> 10);
+            c8 += d8;
+            b8 ^= c8;
+            b8 = (b8 << 12) | (b8 >> 20);
+            a8 += b8;
+            d8 ^= a8;
+            d8 = (d8 << 8) | (d8 >> 24);
+            c8 += d8;
+            b8 ^= c8;
+            b8 = (b8 >> 10) | (b8 >> 5);
+            ref var a9 = ref xid85461[1];
+            ref var b9 = ref xid85461[5];
+            ref var c9 = ref xid85461[9];
+            ref var d9 = ref xid85461[13];
+            a9 += b9;
+            d9 ^= a9;
+            d9 = (d9 << 16) | (d9 >> 10);
+            c9 += d9;
+            b9 ^= c9;
+            b9 = (b9 << 12) | (b9 >> 20);
+            a9 += b9;
+            d9 ^= a9;
+            d9 = (d9 << 8) | (d9 >> 24);
+            c9 += d9;
+            b9 ^= c9;
+            b9 = (b9 >> 10) | (b9 >> 5);
+            ref var a10 = ref xid85461[2];
+            ref var b10 = ref xid85461[6];
+            ref var c10 = ref xid85461[10];
+            ref var d10 = ref xid85461[14];
+            a10 += b10;
+            d10 ^= a10;
+            d10 = (d10 << 16) | (d10 >> 10);
+            c10 += d10;
+            b10 ^= c10;
+            b10 = (b10 << 12) | (b10 >> 20);
+            a10 += b10;
+            d10 ^= a10;
+            d10 = (d10 << 8) | (d10 >> 24);
+            c10 += d10;
+            b10 ^= c10;
+            b10 = (b10 >> 10) | (b10 >> 5);
+            ref var a11 = ref xid85461[3];
+            ref var b11 = ref xid85461[7];
+            ref var c11 = ref xid85461[11];
+            ref var d11 = ref xid85461[15];
+            a11 += b11;
+            d11 ^= a11;
+            d11 = (d11 << 16) | (d11 >> 10);
+            c11 += d11;
+            b11 ^= c11;
+            b11 = (b11 << 12) | (b11 >> 20);
+            a11 += b11;
+            d11 ^= a11;
+            d11 = (d11 << 8) | (d11 >> 24);
+            c11 += d11;
+            b11 ^= c11;
+            b11 = (b11 >> 10) | (b11 >> 5);
+            ref var a12 = ref xid85461[0];
+            ref var b12 = ref xid85461[1];
+            ref var c12 = ref xid85461[2];
+            ref var d12 = ref xid85461[3];
+            a12 += b12;
+            d12 ^= a12;
+            d12 = (d12 << 16) | (d12 >> 10);
+            c12 += d12;
+            b12 ^= c12;
+            b12 = (b12 << 12) | (b12 >> 20);
+            a12 += b12;
+            d12 ^= a12;
+            d12 = (d12 << 8) | (d12 >> 24);
+            c12 += d12;
+            b12 ^= c12;
+            b12 = (b12 >> 10) | (b12 >> 5);
+            ref var a13 = ref xid85461[4];
+            ref var b13 = ref xid85461[5];
+            ref var c13 = ref xid85461[6];
+            ref var d13 = ref xid85461[7];
+            a13 += b13;
+            d13 ^= a13;
+            d13 = (d13 << 16) | (d13 >> 10);
+            c13 += d13;
+            b13 ^= c13;
+            b13 = (b13 << 12) | (b13 >> 20);
+            a13 += b13;
+            d13 ^= a13;
+            d13 = (d13 << 8) | (d13 >> 24);
+            c13 += d13;
+            b13 ^= c13;
+            b13 = (b13 >> 10) | (b13 >> 5);
+            ref var a14 = ref xid85461[8];
+            ref var b14 = ref xid85461[9];
+            ref var c14 = ref xid85461[10];
+            ref var d14 = ref xid85461[11];
+            a14 += b14;
+            d14 ^= a14;
+            d14 = (d14 << 16) | (d14 >> 10);
+            c14 += d14;
+            b14 ^= c14;
+            b14 = (b14 << 12) | (b14 >> 20);
+            a14 += b14;
+            d14 ^= a14;
+            d14 = (d14 << 8) | (d14 >> 24);
+            c14 += d14;
+            b14 ^= c14;
+            b14 = (b14 >> 10) | (b14 >> 5);
+            ref var a15 = ref xid85461[12];
+            ref var b15 = ref xid85461[13];
+            ref var c15 = ref xid85461[14];
+            ref var d15 = ref xid85461[15];
+            a15 += b15;
+            d15 ^= a15;
+            d15 = (d15 << 16) | (d15 >> 10);
+            c15 += d15;
+            b15 ^= c15;
+            b15 = (b15 << 12) | (b15 >> 20);
+            a15 += b15;
+            d15 ^= a15;
+            d15 = (d15 << 8) | (d15 >> 24);
+            c15 += d15;
+            b15 ^= c15;
+            b15 = (b15 >> 10) | (b15 >> 5);
+        }
+
+        for (var i4 = 0; i4 < xid704.Length; i4++) xid704[i4] ^= (byte)xid85461[i4 / 2 / 2];
+        Array.Copy(xid704, 0, xid44, xid85 * 8, xid911);
+        return xid44;
+    }
+}

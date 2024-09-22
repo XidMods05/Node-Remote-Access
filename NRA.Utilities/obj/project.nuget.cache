@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8LL7CK7MUio=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Назар Батчаев\\RiderProjects\\NRA\\NRA.Utilities\\NRA.Utilities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Назар Батчаев\\.nuget\\packages\\sharpcompress\\0.38.0\\sharpcompress.0.38.0.nupkg.sha512",
+    "C:\\Users\\Назар Батчаев\\.nuget\\packages\\snappier\\1.1.6\\snappier.1.1.6.nupkg.sha512",
+    "C:\\Users\\Назар Батчаев\\.nuget\\packages\\zstdsharp.port\\0.8.1\\zstdsharp.port.0.8.1.nupkg.sha512",
+    "C:\\Users\\Назар Батчаев\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.7\\microsoft.netcore.app.ref.8.0.7.nupkg.sha512",
+    "C:\\Users\\Назар Батчаев\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.7\\microsoft.windowsdesktop.app.ref.8.0.7.nupkg.sha512",
+    "C:\\Users\\Назар Батчаев\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.7\\microsoft.aspnetcore.app.ref.8.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
