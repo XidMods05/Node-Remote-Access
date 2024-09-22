@@ -1,5 +1,7 @@
 # Node Remote Access
 
+Nuget link: https://www.nuget.org/packages/Veltonsoft.NRA.Core/
+
 NRA Project 2024 (v1.0.1) - Secure Remote Method Invocation for .NET
 This project provides a secure and efficient mechanism for remote method invocation in .NET applications, similar to Java's RMI. It leverages TCP communication with custom encryption for secure data transfer. 
 
