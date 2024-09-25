@@ -1,4 +1,5 @@
-﻿using System.Text;
+using System.Collections.Concurrent;
+using System.Text;
 using Castle.DynamicProxy;
 using Newtonsoft.Json;
 using NRA.Broker.AbsTcp;
@@ -110,6 +111,8 @@ public class NraProxyClient(bool useWatsonTcp, string host, int port)
 {
     private readonly ProxyGenerator _generator = new();
     private readonly Interceptor _interceptor = new(useWatsonTcp, host, port);
+    
+    private readonly ConcurrentDictionary<string, object> _savedProxies = new();
 
     /// <summary>
     ///     Initializes the NraProxyClient with the provided encryption key and nonce.
@@ -126,16 +129,35 @@ public class NraProxyClient(bool useWatsonTcp, string host, int port)
     }
 
     /// <summary>
-    ///     Creates a proxy interface for the specified type T, forwarding method calls to the remote server.
+    /// Adds proxy to local;
     /// </summary>
-    /// <typeparam name="T">The interface type for which to create a proxy.</typeparam>
-    /// <returns>An instance of the proxy interface.</returns>
-    /// <exception cref="Exception">Thrown when T is not an interface.</exception>
-    public virtual T GetProxyInterface<T>() where T : class
+    /// <param name="target"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
+    public virtual T AddProxyInterface<T>(T target) where T : class
+    {
+        if (!typeof(T).IsInterface) throw new Exception("T must be interface!");
+        _savedProxies.TryAdd(typeof(T).Name, target);
+        return target;
+    }
+    
+    /// <summary>
+    /// Gets proxy interface from remote server or from, local cache
+    /// </summary>
+    /// <param name="fromLocal"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
+    public virtual T? GetProxyInterface<T>(bool fromLocal = false) where T : class
     {
         Thread.Yield();
 
         if (!typeof(T).IsInterface) throw new Exception("T must be interface!");
-        return _generator.CreateInterfaceProxyWithoutTarget<T>(_interceptor);
+
+        if (!fromLocal) return _generator.CreateInterfaceProxyWithoutTarget<T>(_interceptor);
+        
+        if (_savedProxies.TryGetValue(typeof(T).Name, out var value)) return value as T;
+        return null;
     }
 }
