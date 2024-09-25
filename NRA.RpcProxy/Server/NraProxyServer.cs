@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using System.Text;
 using Castle.DynamicProxy;
 using Newtonsoft.Json;
@@ -109,6 +109,8 @@ public class NraProxyServer(bool useWatsonTcp, string host, int port)
 {
     private readonly ProxyGenerator _generator = new();
     private readonly Interceptor _interceptor = new(useWatsonTcp, host, port);
+    
+    private readonly ConcurrentDictionary<string, object> _savedProxies = new();
 
     /// <summary>
     ///     Initializes the communication server with the provided encryption key and nonce.
@@ -140,12 +142,27 @@ public class NraProxyServer(bool useWatsonTcp, string host, int port)
         _interceptor.SavedProxies.TryAdd(i.GetType().Name, n =>
         {
             var met = i.GetType().GetMethod(n.Item1);
-            if (met == null) return (false, new object[0], null!);
+            if (met == null) return (false, [], null!);
 
             var rt = met.Invoke(i, n.Item2);
             return (true, n.Item2, rt)!;
         });
 
+        _savedProxies.TryAdd(typeof(T).Name, i);
         return i;
+    }
+    
+    /// <summary>
+    /// Gets the proxy from local.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
+    public virtual T? GetProxyInterface<T>() where T : class
+    {
+        Thread.Yield();
+
+        if (!typeof(T).IsInterface) throw new Exception("T must be interface!");
+        return _savedProxies.GetValueOrDefault(typeof(T).Name) as T;
     }
 }
